@@ -1,12 +1,10 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
-import Header from './components/Header';
+import {Header} from './components/Header';
 import Home from './components/Pages/Home';
 
 function App() {
   const [loading, setLoading] = React.useState(false);
-
-  console.log(loading);
 
   return (
       <>

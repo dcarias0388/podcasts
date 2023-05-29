@@ -9,10 +9,14 @@ export const listPostcasts = async () => {
         const response = await axiosCORS.get("https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json");
         const data = response.data.feed.entry;
         const filterData = data.map(post => {
-            return { id: post.id.attributes['im:id'], title: post['im:name'].label, image: post["im:image"][0].label, author: post["im:artist"].label, summary: post.summary.label}
+            {
+            id: post.id.attributes["im:id"],
+            namePost: post["im:name"].label,
+            imagen: p["im:image"][2].label,
+            author: p["im:artist"].label,
+            summary: p.summary ? p.summary.label : "No description"}
         })
-        return filterData;
     } catch (error) {
-        console.log(`Error loading poastcasts: ${error}`);
+        console.log(`ERRORS ${error}`);
     }
 }

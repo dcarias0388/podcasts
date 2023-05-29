@@ -6,8 +6,6 @@ import Home from './components/Pages/Home';
 function App() {
   const [loading, setLoading] = React.useState(false);
 
-  console.log(loading);
-
   return (
       <>
         <Header loading={loading}/>

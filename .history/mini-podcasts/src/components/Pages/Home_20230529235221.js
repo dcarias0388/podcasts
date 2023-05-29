@@ -16,6 +16,7 @@ const Home = ({loading,isLoading}) => {
     const [filter, setFilter] = useState(''); // states store filter
 
     useEffect(() => {
+        console.log("ENTRO", localStorage.getItem('postcasts'));
         // starting page load
         isLoading(true);
 

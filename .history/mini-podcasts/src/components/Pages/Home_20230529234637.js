@@ -16,32 +16,37 @@ const Home = ({loading,isLoading}) => {
     const [filter, setFilter] = useState(''); // states store filter
 
     useEffect(() => {
+        console.log("ENTRO", localStorage.getItem('postcasts'));
         // starting page load
         isLoading(true);
 
         // checking if there are postcasts stored in the local storage and if it is, if it is not expired
-        if (localStorage.getItem('postcasts') || verifyTime(JSON.parse(localStorage.getItem('postcasts')).timestamp)){
-            listPostcasts().then((listPost) => {
-                if(listPost) {
-                    // update states postcasts
-                    setPostcasts(listPost);
-                    setFilterPostcasts(listPost);
-    
-                    // object postcasts to store in local storage and update the timestamp
-                    const objPost = {value: listPost, timestamp: new Date().getTime()}; 
-    
-                    localStorage.setItem('postcasts', JSON.stringify(objPost));
-    
-                    // loading stops
-                    isLoading(false);
-                }else{
-                    console.log('No postcast to show');
-                    // loading stops
-                    isLoading(false);
-                    return;
-                }  
-            });         
-        } else{
+        if (!localStorage.getItem('postcasts') || verifyTime(JSON.parse(localStorage.getItem('postcasts')).timestamp)){
+            console.log('IF');
+            const listPost = listPostcasts().then((res) => {
+                console.log('POSTCASTS',res);
+            });
+            if(listPost) {
+                console.log('POSTCASTS',listPost);
+                // update states postcasts
+                setPostcasts(listPost);
+                setFilterPostcasts(listPost);
+
+                // object postcasts to store in local storage and update the timestamp
+                const objPost = {value: listPost, timestamp: new Date().getTime()}; 
+
+                localStorage.setItem('postcasts', JSON.stringify(objPost));
+
+                // loading stops
+                isLoading(false);
+            }else{
+                console.log('No postcast to show');
+                // loading stops
+                isLoading(false);
+                return;
+            }           
+        } else {
+            console.log('ELSE');
             // the stored postcasts are obtained and the status is updated
             const postStorage = JSON.parse(localStorage.getItem('postcasts')).value;
             setPostcasts(postStorage);
