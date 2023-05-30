@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // styles
 import {Nav, Loader, Spinner} from './Header.styles';
@@ -15,5 +16,13 @@ const Header = ({loading}) => {
     </Nav>
   )
 }
+
+Header.defaultProps = {
+  loading: false,
+};
+
+Header.propTypes = {
+  loading: PropTypes.bool,
+};
 
 export default Header;

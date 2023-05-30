@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import Header from './components/Header';
-import Home from './components/Pages/Home';
+import Home from './pages/Home';
 
 function App() {
   const [loading, setLoading] = React.useState(false);

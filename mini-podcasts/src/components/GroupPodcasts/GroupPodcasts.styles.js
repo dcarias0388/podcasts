@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
-export const GridContainer = styled.div`
+export const GridContainer = styled.section`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px 20px;
+    gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
 `;
 
 export const GridCard = styled.div`
@@ -14,10 +16,13 @@ export const GridCard = styled.div`
     border: none;
     background-color: transparent;
 
-    & > image {
+    & > img {
         width: 100px;
         height: 100px;
         border-radius: 50%;
+        object-fit: cover;
+        position: relative;
+        bottom: -50px;
     }
 `;
 
@@ -25,16 +30,17 @@ export const TextContainer = styled.div`
     display: flex;
     width: 100%;
     height: 100%;
+    padding-top: 50px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid gray;
+    border: 1px solid #999999;
     border-top: none;
+    text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     z-index: 1;
 
     & > h3 {
-        text-align: center;
         padding: 0;
         margin: 0;
     }

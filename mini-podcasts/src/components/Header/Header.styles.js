@@ -5,7 +5,9 @@ export const Nav = styled.div`
     display: flex;
     width: 100%;
     height: 56px;
+    margin: 0 auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    max-width: 95%;
 
     & > h1 {
         font-size: 24px;
