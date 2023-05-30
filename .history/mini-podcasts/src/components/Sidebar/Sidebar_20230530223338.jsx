@@ -9,10 +9,10 @@ const Sidebar = ({podcast}) => {
   return (
     <Container>
         <img src={podcast.image} alt={podcast.title} />
-        <Divider />
+        <hr/>
         <h3>{podcast.title}</h3>
         <p><em>{`by ${podcast.author}`}</em></p>
-        <Divider />
+        <hr/>
         <h3>Description:</h3>
         <p><em>{podcast.summary}</em></p>
     </Container>

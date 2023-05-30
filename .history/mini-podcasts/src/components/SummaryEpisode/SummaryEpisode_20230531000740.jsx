@@ -6,19 +6,31 @@ import {Container, TotalWrapper, TableContainer, Table, ContainerScroll, TableHe
 
 const SummaryEpisode = ({data}) => {
 
-    const msToHours = (millis) => {
+    const msToHours = (s) => {
+
+        function addZ(n) {
+            return (n<10? '0':'') + n;
+          }
     
-          let ms = millis % 1000;
-          millis = (millis - ms) / 1000;
-          let secs = millis % 60;
-          secs = (secs < 10)? `0${secs}` : secs;
-          millis = (millis - secs) / 60;
-          let mins = millis % 60;
+          let ms = s % 1000;
+          s = (s - ms) / 1000;
+          let secs = s % 60;
+          s = (s - secs) / 60;
+          let mins = s % 60;
           mins = (mins < 10)? `0${mins}` : mins;
-          let hrs = (millis - mins) / 60;
+          let hrs = (s - mins) / 60;
           hrs = (hrs < 10)? `0${hrs}` : hrs;
 
-          return `${hrs} : ${mins} : ${secs}`;
+          return hrs + ':' + mins;
+        // let minutes = Math.floor((millis / 1000 / 60) % 60);
+        // minutes = (minutes < 10)? `0${minutes}` : minutes;
+        // let hours = Math.floor(minutes / 60);
+        // return `${hours}:${minutes}`;
+        // let hour = Math.floor(millis / 3600000);
+        // hour = (hour < 10)? '0' + hour : hour;
+        // let minute = Math.floor((millis / 1000 / 60) % 60);
+        // minute = (minute < 10)? '0' + minute : minute;
+        // return hour + ':' + minute;
     }
 
   return (
@@ -42,7 +54,7 @@ const SummaryEpisode = ({data}) => {
                         <TableRow key={episode?.id} $color={index%2===0}>
                             <TableCell>{episode?.title}</TableCell>
                             <TableCell>{new Date(episode?.date).toLocaleDateString('es-ES')}</TableCell>
-                            <TableCell>{msToHours(episode?.duration)}</TableCell>
+                            <TableCell>{episode?.duration}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

@@ -19,42 +19,34 @@ export const TotalWrapper = styled.div`
 
 export const TableContainer = styled(TotalWrapper)`
     margin-top: 20px;
-    padding: 2rem 1rem;
+    padding: 1rem;
 `;
 
 export const Table = styled.table`
+    margin: 37px auto 50px;
     text-align: left;
     border-collapse: collapse;
     width: 95%;
     max-width: 750px;
     font-weight: 500;
-    margin: 0 auto;
+    color: ${({ theme }) => theme.colors.neutral.neutral10};
 `;
 
-export const TableHead = styled.thead`
-    position: sticky;
-    top: 0;
-`;
+export const TableHead = styled.thead``;
 
-export const ContainerScroll = styled.div`
-  height:100vh;
-  overflow: scroll;
-  width: 100%;
-`;
-
-export const TableBody = styled.tbody`
-`;
+export const TableBody = styled.tbody``;
 
 export const TableHeadCell = styled.th`
-    border-bottom: 2px solid #999999;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.neutral.neutral10};
     padding-bottom: 12px;
+    width: 30%;
 `;
 
 export const TableRow = styled.tr`
- background-color: ${({ $color }) => $color? '#F5F5F5' : '#FFFFFF'};
+ background-color: ${({ $color }) => $color? '#CCCCCC' : '#FFFFFF'};
 `;
 
 export const TableCell = styled.td`
     padding: 14px 0;
-    border-bottom: #999999;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.neutral50};
 `;

@@ -29,6 +29,7 @@ export const Table = styled.table`
     max-width: 750px;
     font-weight: 500;
     margin: 0 auto;
+    overflow: scroll;
 `;
 
 export const TableHead = styled.thead`
@@ -36,13 +37,8 @@ export const TableHead = styled.thead`
     top: 0;
 `;
 
-export const ContainerScroll = styled.div`
-  height:100vh;
-  overflow: scroll;
-  width: 100%;
-`;
-
 export const TableBody = styled.tbody`
+    overflow:auto;
 `;
 
 export const TableHeadCell = styled.th`

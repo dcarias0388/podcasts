@@ -7,18 +7,13 @@ import {Container, TotalWrapper, TableContainer, Table, ContainerScroll, TableHe
 const SummaryEpisode = ({data}) => {
 
     const msToHours = (millis) => {
-    
-          let ms = millis % 1000;
-          millis = (millis - ms) / 1000;
-          let secs = millis % 60;
-          secs = (secs < 10)? `0${secs}` : secs;
-          millis = (millis - secs) / 60;
-          let mins = millis % 60;
-          mins = (mins < 10)? `0${mins}` : mins;
-          let hrs = (millis - mins) / 60;
-          hrs = (hrs < 10)? `0${hrs}` : hrs;
-
-          return `${hrs} : ${mins} : ${secs}`;
+        var hour = Math.floor(seconds / 3600);
+        hour = (hour < 10)? '0' + hour : hour;
+        var minute = Math.floor((seconds / 60) % 60);
+        minute = (minute < 10)? '0' + minute : minute;
+        var second = seconds % 60;
+        second = (second < 10)? '0' + second : second;
+        return hour + ':' + minute + ':' + second;
     }
 
   return (
@@ -42,7 +37,7 @@ const SummaryEpisode = ({data}) => {
                         <TableRow key={episode?.id} $color={index%2===0}>
                             <TableCell>{episode?.title}</TableCell>
                             <TableCell>{new Date(episode?.date).toLocaleDateString('es-ES')}</TableCell>
-                            <TableCell>{msToHours(episode?.duration)}</TableCell>
+                            <TableCell>{episode?.duration}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

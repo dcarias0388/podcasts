@@ -33,6 +33,5 @@ export const Container = styled.aside`
 export const Divider = styled.hr`
     width: 100%;
     height: 0;
-    border: .5px solid #EFEFEF;
-    margin: 1rem 0;
+    border: .5px solid #999999;
 `;

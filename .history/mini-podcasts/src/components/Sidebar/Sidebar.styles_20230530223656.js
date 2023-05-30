@@ -18,14 +18,10 @@ export const Container = styled.aside`
         position: relative;
         margin: 0 auto;
     }
-
-    & > h3 {
-       margin: 0 0 0.2rem 0;
-       padding: 0;
-    }
-    & > p {
+    
+    & > p, h3 {
         padding: 0;
-        margin: 0;
+        margin: 0 0.2rem 0;
         color: #343434;
     }
 `;
@@ -33,6 +29,5 @@ export const Container = styled.aside`
 export const Divider = styled.hr`
     width: 100%;
     height: 0;
-    border: .5px solid #EFEFEF;
-    margin: 1rem 0;
+    border: .5px solid #999999;
 `;

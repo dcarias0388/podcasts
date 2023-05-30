@@ -7,5 +7,6 @@ export const Container = styled.section`
     align-items: stretch;
     justify-content: center;
     gap: 5rem;
+    overflow-y: scroll;
     height: 100vh;
 `;

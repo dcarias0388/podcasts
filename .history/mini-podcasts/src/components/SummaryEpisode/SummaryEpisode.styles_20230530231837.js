@@ -39,7 +39,6 @@ export const TableHead = styled.thead`
 export const ContainerScroll = styled.div`
   height:100vh;
   overflow: scroll;
-  width: 100%;
 `;
 
 export const TableBody = styled.tbody`

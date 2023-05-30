@@ -20,6 +20,7 @@ export const TotalWrapper = styled.div`
 export const TableContainer = styled(TotalWrapper)`
     margin-top: 20px;
     padding: 2rem 1rem;
+    overflow: scroll;
 `;
 
 export const Table = styled.table`
@@ -36,14 +37,7 @@ export const TableHead = styled.thead`
     top: 0;
 `;
 
-export const ContainerScroll = styled.div`
-  height:100vh;
-  overflow: scroll;
-  width: 100%;
-`;
-
-export const TableBody = styled.tbody`
-`;
+export const TableBody = styled.tbody``;
 
 export const TableHeadCell = styled.th`
     border-bottom: 2px solid #999999;
