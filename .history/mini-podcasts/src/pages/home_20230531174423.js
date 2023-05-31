@@ -63,12 +63,12 @@ const Home = ({loading,isLoading}) => {
 
   return (
     <>
-    {!loading ? (
+    {!loading && (
         <>
             <FilterPodcasts value={filter} podcasts={filterPodcasts} onChange={onChange}/>
             <GroupPodcasts podcasts={filterPodcasts}/>
         </>
-        ): "Loading..."}
+        )}
     </>
   )
 }

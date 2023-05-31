@@ -20,7 +20,7 @@ const App = () => {
       <Route index path='/' element={<Home loading={loading} isLoading={setLoading}/>}/>
       <Route path='/' element={<PodcastDetails loading={loading} isLoading={setLoading}/>}>
         <Route path='podcast/:podcastId' element={<SummaryEpisode loading={loading} isLoading={setLoading}/>}/>
-        <Route path='podcast/:podcastId/episode/:episodeId' element={<EpisodeDetails loading={loading} isLoading={setLoading}/>}/>
+        <Route path='episode/:episodeId' element={<EpisodeDetails loading={loading} isLoading={setLoading}/>}/>
       </Route>
       <Route path="*" element={<ErrorPage/> } />
     </Routes>

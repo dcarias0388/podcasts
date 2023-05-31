@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react'
 import { listPodcasts } from 'services/apiAxios';
 
 // utils
-import {verifyTime} from 'utils/helpers';
+import {verifyTime} from 'utils/verifyTime';
 
 // components
 import {GroupPodcasts, FilterPodcasts} from 'components/molecules';
@@ -63,12 +63,12 @@ const Home = ({loading,isLoading}) => {
 
   return (
     <>
-    {!loading ? (
+    {!loading && (
         <>
             <FilterPodcasts value={filter} podcasts={filterPodcasts} onChange={onChange}/>
             <GroupPodcasts podcasts={filterPodcasts}/>
         </>
-        ): "Loading..."}
+        )}
     </>
   )
 }
