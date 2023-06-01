@@ -12,12 +12,9 @@ export const Container = styled.aside`
     padding: 2rem 1rem;
 
     & a {
+        margin: 0 auto;
         color: inherit;
         text-decoration: none;
-    }
-
-    &>a:first-child{
-        margin: 0 auto;
     }
 
     & img {

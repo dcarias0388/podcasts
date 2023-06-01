@@ -68,7 +68,7 @@ const Home = ({loading,isLoading}) => {
             <FilterPodcasts value={filter} podcasts={filterPodcasts} onChange={onChange}/>
             <GroupPodcasts podcasts={filterPodcasts}/>
         </>
-        ): (<h2>Loading...</h2>)}
+        ): <h2>Loading...</h2>}
     </>
   )
 }

@@ -57,14 +57,12 @@ const PodcastDetails = ({loading, isLoading}) => {
   },[isLoading, podcastId]);
 
   return (
-    <>
     {!loading ? (
       <Container>
         <Sidebar podcast={podcast}/>
         <Outlet context={[podcastData]}/>
     </Container>
     ) : (<h2>Loading...</h2>)}
-    </>
   )
 }
 
