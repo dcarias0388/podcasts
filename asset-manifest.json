@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/podcasts/mini-podcasts/static/js/main.9b79211c.js",
+    "index.html": "/podcasts/mini-podcasts/index.html",
+    "main.9b79211c.js.map": "/podcasts/mini-podcasts/static/js/main.9b79211c.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.9b79211c.js"
+  ]
+}
